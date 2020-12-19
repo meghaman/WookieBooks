@@ -39,24 +39,20 @@ namespace WookieBooks.Controllers
 		[HttpGet("{id}")]
 		public ActionResult<Book> Get(int id)
 		{
-			return (from book in books
-				   where book.ICBN == id
-				   select book).FirstOrDefault();
+			return books.FirstOrDefault(book => book.ICBN == id);
 		}
 
 		[HttpPost]
-		public void Post([FromBody] string value)
+		public void Post([FromBody] Book book)
 		{
-		}
-
-		[HttpPut("{id}")]
-		public void Put(int id, [FromBody] string value)
-		{
+			books.RemoveAll(_book => _book.ICBN == book.ICBN);
+			books.Add(book);
 		}
 
 		[HttpDelete("{id}")]
 		public void Delete(int id)
 		{
+			books.RemoveAll(book => book.ICBN == id);
 		}
 	}
 }
