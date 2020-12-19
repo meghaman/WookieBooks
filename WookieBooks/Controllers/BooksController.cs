@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 
+using System.Linq;
+
 using WookieBooks.Models;
 
 namespace WookieBooks.Controllers
@@ -35,9 +37,11 @@ namespace WookieBooks.Controllers
 		}
 
 		[HttpGet("{id}")]
-		public ActionResult<string> Get(int id)
+		public ActionResult<Book> Get(int id)
 		{
-			return "value";
+			return (from book in books
+				   where book.ICBN == id
+				   select book).FirstOrDefault();
 		}
 
 		[HttpPost]

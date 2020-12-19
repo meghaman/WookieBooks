@@ -42,6 +42,12 @@ namespace WookieBooksTests
 		}
 
 		[Test]
+		public void GetBookByICBN()
+		{
+			Assert.AreEqual(defaultBooks[0], controller.Get(1).Value);
+		}
+
+		[Test]
 		public void AddBook()
 		{
 
@@ -62,7 +68,7 @@ namespace WookieBooksTests
 		[Test]
 		public void GetNonExistantBook()
 		{
-
+			Assert.AreEqual(null, controller.Get(100).Value);
 		}
 
 		[Test]
