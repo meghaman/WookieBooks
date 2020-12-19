@@ -1,0 +1,120 @@
+{
+	"info": {
+		"_postman_id": "b3f40ca9-ad6a-49e3-b57e-47ed7a2c11e5",
+		"name": "WookieBooks",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get All",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/books",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"icbn\": 3,\r\n    \"title\": \"Dark Lord: The Rise of Darth Vader\",\r\n    \"description\": \"The rise of a dark lord, Darth Vader\",\r\n    \"author\": \"Darth Vader\",\r\n    \"coverImage\": \"https://images-na.ssl-images-amazon.com/images/I/91d8jnMjHrL.jpg\",\r\n    \"price\": 14.99\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/books",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"icbn\": 2,\r\n    \"title\": \"Watch Out, Jim Jam!\",\r\n    \"description\": \"Jim Jam watches out\",\r\n    \"author\": \"Jim Jam Binks\",\r\n    \"coverImage\": \"https://static.wikia.nocookie.net/simpsons/images/5/51/800px-Jim_Jam.png/revision/latest/top-crop/width/360/height/360?cb=20170101190859\",\r\n    \"price\": 10.01\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/books",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/books/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"books",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
